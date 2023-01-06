@@ -1,12 +1,24 @@
-const apiKeySid = 'SK.0.wEihQqa2zlS9sTHCCXsAZHPnS9Udsg7J';
-const apiKeySecret = 'clE2bFRMVEtOTUZFSEpqdjhuZGhVbmpBYk9UdUtlWkY=';
-const userId = 'user1';
+const express = require("express");
+const app = express();
 
-var token = getAccessToken();
-console.log(token);
+app.use(express.static("public"));
 
+app.get("/:userId", (req, res) => {
+    res.send(JSON.stringify({
+        token: getAccessToken(req.params.userId)
+    }));
+})
 
-function getAccessToken() {
+app.use("/", (req, res) => {
+    res.redirect("/user.html");
+})
+
+var port = 3000;
+app.listen(port, () => console.log("Running on port " + port));
+
+const getAccessToken = (userId) => {
+    const apiKeySid = 'SK.0.wEihQqa2zlS9sTHCCXsAZHPnS9Udsg7J';
+    const apiKeySecret = 'clE2bFRMVEtOTUZFSEpqdjhuZGhVbmpBYk9UdUtlWkY=';
     var now = Math.floor(new Date().getTime() / 1000);
     var exp = now + 3600;
 
