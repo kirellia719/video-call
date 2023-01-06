@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body class="center">
+    <div class="body">
+        <div class="header">
+            <div id="info">
+                <h4>
+                    You:
+                    <span style="color: rgb(43, 159, 255);" id="username"></span>
+                </h4>
+                <div id="toWhom">
+                    Call to:
+                    <input type="text" id="calleeId">
+                </div>
+            </div>
+            <div id="nofi">
+
+                <button id="callButton" class="btn-success">Call</button>
+                <div id="incoming-call-notice" style="display: none;">
+                    <div class="spinner-grow text-primary" role="status">
+                        <span class="sr-only">Incoming call...</span>
+                    </div>
+                    <h4>Incoming call...</h4>
+                </div>
+            </div>
+        </div>
+
+        <div id="video-container">
+            <video id="localVideo" autoplay muted></video>
+            <video id="remoteVideo" autoplay></video>
+        </div>
+
+        <div class="row">
+            <div class="col" id="action-buttons">
+                <button id="answerCallButton" class="btn btn-info hidden-first">Answer Call</button>
+                <button id="rejectCallButton" class="btn btn-warning hidden-first">Reject Call</button>
+                <button id="endCallButton" class="btn btn-danger hidden-first">End Call</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/socket.io-2.2.0.js"></script>
+    <script src="js/StringeeSDK-1.5.10.js"></script>
+
+
+
+
+    <script>
+        var callerId = prompt("Nhap ten", "user1");
+        document.title = callerId;
+        $("#username").html(callerId);
+    </script>
+
+
+    <script src="js/code.js"></script>
+</body>
+
+</html>

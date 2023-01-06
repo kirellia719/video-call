@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.body {
+    width: 800px;
+}
+
+.header {
+    width: calc(100% - 20px);
+    max-width: 400px;
+    padding: 20px;
+    background-color: aliceblue;
+    display: flex;
+}
+
+.header #info {
+    width: 50%;
+}
+
+#nofi {
+    width: 50%;
+}
+
+#toWhom {
+    margin-top: 10px;
+}
+
+#toWhom input {
+    padding: 2px;
+    width: 100px;
+    text-align: center;
+    font-size: 15px !important;
+    line-height: 15px !important;
+}
+
+#callButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    border-radius: 50%;
+    border: none;
+}
+
+#video-container {
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+video {
+    background: #dee;
+}
+
+#localVideo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    z-index: 10;
+    background: #333;
+}
+
+#remoteVideo {
+    width: 100%;
+}
+
+#action-buttons {
+    margin: auto;
+    text-align: center;
+}
+
+.hidden-first {
+    display: none;
+}
